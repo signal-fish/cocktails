@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from './pages/Home'
 import About from './pages/About'
@@ -9,7 +9,7 @@ import Error from './pages/Error'
 const App = () => {
   return (
     <Container>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Navbar />
         <Switch>
           <Route exact path="/">
